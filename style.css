@@ -1,0 +1,254 @@
+:root {
+  font-size: 62.5%;
+
+  --white: #FFF;
+  --white-100: #FBFAFF;
+
+  --purple-200: #E2D6FF;
+  --purple-400: #7C3AED;
+
+  --gray-300: #E3E3E3;
+  --gray-400: #CAB3FF;
+
+  --black-100: #7C7C8A;
+  --black-200: #756966;
+  --black-300: #505059;
+  --black-400: #403937;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+body,
+input,
+button {
+  outline: none;
+  color: var(--black-400);
+
+  font-size: 1.6rem;
+  font-family: 'Inter', sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  background-color: var(--purple-400);
+}
+
+aside {
+  height: 100vh;
+  min-width: 17.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+aside img {
+  margin-top: 3.2rem;
+}
+
+.side-menu {
+  margin-top: 6rem;
+}
+
+.side-menu ul li {
+  list-style: none;
+}
+
+.side-menu ul li + li {
+  margin-top: 3.6rem;
+}
+
+.side-menu ul li a {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+
+  text-decoration: none;
+  color: var(--gray-400);
+  font-weight: 700;
+}
+
+.side-menu ul li.selected a {
+  color: var(--white);
+}
+
+.side-menu ul li:nth-of-type(1) a::before {
+  content: url('./assets/menu-icons/tablet-portrait.svg');
+}
+
+.side-menu ul li:nth-of-type(2) a::before {
+  content: url('./assets/menu-icons/people.svg');
+}
+
+.side-menu ul li:nth-of-type(3) a::before {
+  content: url('./assets/menu-icons/document-text.svg');
+}
+
+.side-menu ul li:nth-of-type(4) a::before {
+  content: url('./assets/menu-icons/cog.svg');
+}
+
+main {
+  margin-top: .4rem;
+  border-top-left-radius: 32px;
+  padding: 4.8rem 3.2rem;
+
+  background-color: var(--white-100);
+}
+
+main .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 3.2rem;
+}
+
+main .title h1 {
+  font-weight: 700;
+  font-size: 3.2rem;
+}
+
+main .title h1::after {
+  margin-left: 12px;
+  cursor: pointer;
+  content: url(./assets/pen.svg);
+}
+
+main .search-container {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+main .search-container button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .8rem;
+
+  color: var(--white);
+  font-size: 1.4rem;
+  border: 0.7px solid var(--white);
+  text-shadow: 0px 4px 16px rgba(22, 22, 22, 0.1);
+
+  padding: 1.2rem 3.2rem;
+  border-radius: 5px;
+  border: none;
+
+  cursor: pointer;
+  background-color: var(--purple-400);
+  transition: filter .2s;
+}
+
+main .search-container button:hover {
+  filter: brightness(70%);
+}
+
+main .search-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-grow: 1;
+
+  padding: 1.4rem 2.4rem;
+
+  height: 100%;
+  background-color: var(--white);
+  border: 0.7px solid var(--gray-300);
+  box-shadow: 0px 4px 16px rgba(22, 22, 22, 0.1);
+  border-radius: 8px;
+}
+
+main .search-container input {
+  margin-left: 1rem;
+  border: none;
+}
+
+main .search-container input::placeholder {
+  color: var(--black-100);
+  font-size: 1.6rem;
+}
+
+.kanban {
+  display: flex;
+  justify-content: space-between;
+}
+
+.kanban .card-container {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.kanban .card-container > p {
+  padding: 2.4rem 0rem;
+}
+
+.card {
+  max-width: 32.1rem;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+  overflow: hidden;
+
+  list-style: none;
+
+  padding: 2.4rem;
+  background-color: var(--white);
+  box-shadow: 0px 4px 16px #EAE2FD;
+  border-radius: 8px;
+}
+
+.card + .card {
+  margin-top: 2.4rem;
+}
+
+.card p {
+  height: 3.7rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.82rem;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  color: var(--black-200);
+}
+
+.card h2 {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.card .tag-container {
+  display: flex;
+  gap: 1.6rem;
+
+  list-style: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--purple-400);
+}
+
+.card .tag-container li {
+  padding: .4rem .8rem;
+  border-radius: 8px;
+  background-color: var(--purple-200);
+}
